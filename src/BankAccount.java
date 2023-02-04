@@ -19,17 +19,17 @@ public class BankAccount {
     public void deposit(double sum) {
         if (sum > 0) {
             amount = amount + sum;
-            System.out.println("На кошелке: " + amount);
+            System.out.println("In the wallet " + amount);
         }
     }
     public void withDraw(int sum) throws LimitExcepcion{
         if (amount < sum) {
-            System.out.println("Вы можете снять только: "  + amount);
-            System.out.println("Остаток на кошелке: " + amount);
-            throw new LimitExcepcion("Недостаточно средств на балансе. Остаток средств на балансе  ", amount);
+            System.out.println("You can only withdraw "  + amount);
+            System.out.println("Remaining amount in the wallet " + amount);
+            throw new LimitExcepcion("Not enough money  ", amount);
         } else {
-            System.out.println("Снято со кошелка: " + sum);
-            System.out.println("Остаток на кошелке: " + (amount = amount - sum));
+            System.out.println("Withdrew from the wallet " + sum);
+            System.out.println("Remaining amount " + (amount = amount - sum));
         }
 
     }
