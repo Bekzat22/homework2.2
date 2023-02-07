@@ -10,17 +10,17 @@ public class Main {
         System.out.println("Insert a deposit:");
         Scanner scanner=new Scanner(System.in);
         bankAccount.deposit(scanner.nextDouble());
-      while (true){
+    while (true){
           try {
-              bankAccount.withDraw(6000);
+              System.out.println("how much do you want to withdraw");
+              bankAccount.withDraw(scanner.nextInt());
           } catch (LimitExcepcion e) {
-              try {
-                  bankAccount.withDraw((int) e.getRemainingAmount());
-              }catch (LimitExcepcion ex){
-                  ex.printStackTrace();
-              }
-              break;
+              e.printStackTrace();
+              System.out.println("remained"+bankAccount.getAmount());
           }
+
+
+      }
 
 
       }
